@@ -24,7 +24,7 @@ def configure_views(settings):
     # Setup Jinja2 templates
     dev_mode = settings.dev_mode
     folder = os.path.dirname(__file__)
-    template_folder = os.path.join(folder, 'app/views')
+    template_folder = os.path.join(folder, 'views')
     template_folder = os.path.abspath(template_folder)
     fastapi_jinja.global_init(template_folder, auto_reload=dev_mode)
 
