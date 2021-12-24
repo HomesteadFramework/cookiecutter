@@ -1,22 +1,36 @@
+import os
+import fastapi_jinja
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from starlette.middleware.authentication import AuthenticationMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
 from app.cors import get_cors_domains
-from app.modules.user.authentication_controller import router as authentication_router
 
 app = FastAPI()
 
+# Mount static file directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 def main():
-    configure(settings.app_env)
+    configure(settings)
 
 
-def configure(env: str):
-    configure_cors(env)
+def configure(settings):
+    configure_cors(settings.app_env)
+    configure_views(settings.dev_mode)
     configure_middleware()
     configure_routes()
+
+
+def configure_views(settings):
+    # Setup Jinja2 templates
+    dev_mode = settings.dev_mode
+    folder = os.path.dirname(__file__)
+    template_folder = os.path.join(folder, 'app/views')
+    template_folder = os.path.abspath(template_folder)
+    fastapi_jinja.global_init(template_folder, auto_reload=dev_mode)
 
 
 def configure_cors(env: str):
@@ -31,8 +45,7 @@ def configure_cors(env: str):
 
 
 def configure_middleware():
-    from app.middleware.authentication_middleware import AuthBackend
-    app.add_middleware(AuthenticationMiddleware, backend=AuthBackend())
+    pass
 
 
 def configure_db():
@@ -45,7 +58,6 @@ def configure_routes():
         return {"message": "Health Response"}
 
     # Routes from other routers
-    app.include_router(authentication_router)
 
 
 if __name__ == "__main__":

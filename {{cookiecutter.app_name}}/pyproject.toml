@@ -9,6 +9,7 @@ python = "3.10"
 fastapi = {extras = ["all"], version = "^0.70.1"}
 sqlmodel = "^0.0.5"
 Jinja2 = "^3.0.3"
+fastapi-jinja = {git = "https://github.com/AGeekInside/fastapi-jinja.git", branch = "main"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"

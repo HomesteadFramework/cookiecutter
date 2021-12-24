@@ -7,6 +7,7 @@ A project scaffold with {{cookiecutter.framework_name}} is opinionated and inclu
 * [SQLModel](https://sqlmodel.tiangolo.com/)
 * [TailwindCSS](https://tailwindcss.com/)
 * [Laravel Mix](https://laravel-mix.com/)
+* [FastAPI-Jinja](https://github.com/AGeekInside/fastapi-jinja)
 
 # Architecture
 
@@ -35,6 +36,10 @@ Any global services that you want to use in your project. Your business logic sh
 **assets**
 
 Directory for your css and js files. 
+
+**templates**
+
+Jinja2 templates for your project. 
 
 **config.py**
 
@@ -91,6 +96,7 @@ An example of your .env file. This will contain all the default values for your 
 |    | -- assets
 |    |    | -- css
 |    |    | -- js
+|    | -- templates
 | -- config.py
 | -- cors.py
 | -- main.py
