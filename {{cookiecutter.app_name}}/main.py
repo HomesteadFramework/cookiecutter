@@ -13,7 +13,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-def configure(settings_obj: Settings):
+def bootstrap(settings_obj: Settings):
     configure_cors(settings_obj.app_env)
     configure_views(settings_obj)
     configure_middleware()
@@ -56,6 +56,6 @@ def configure_routes():
     # Routes from other routers
     from app.modules.welcome.controller import router as welcome_router
     app.include_router(welcome_router)
-    
 
-configure(settings.app_env)
+
+bootstrap(settings)
