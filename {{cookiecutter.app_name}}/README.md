@@ -1,8 +1,8 @@
-# Project Created with Wrangler
+# Project Created with {{cookiecutter.framework_name}}
 
-Wrangler is a fast, simple and easy to use cli for creating fast and scalable web applications with FASTAPI.
+{{cookiecutter.framework_name}} is a fast, simple and easy to use cli for creating fast and scalable web applications with FASTAPI.
 
-A project scaffold with Wrangler is opinionated and includes the following packages/features:
+A project scaffold with {{cookiecutter.framework_name}} is opinionated and includes the following packages/features:
 * [FastAPI](https://fastapi.tiangolo.com/) 
 * [SQLModel](https://sqlmodel.tiangolo.com/)
 * [TailwindCSS](https://tailwindcss.com/)
@@ -10,10 +10,10 @@ A project scaffold with Wrangler is opinionated and includes the following packa
 
 # Architecture
 
-As well as being opinionated, Wrangler is also designed around the idea that each feature should be self-contained and
+As well as being opinionated, {{cookiecutter.framework_name}} is also designed around the idea that each feature should be self-contained and
 have an easy to use api.
 
-The following folder structure is used and is the recommended structure for Wrangler projects. This is the
+The following folder structure is used and is the recommended structure for {{cookiecutter.framework_name}} projects. This is the
 structure that cli commands will be expecting the files to be in. 
 
 **Modules**
