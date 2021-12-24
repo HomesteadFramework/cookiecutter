@@ -76,20 +76,21 @@ An example of your .env file. This will contain all the default values for your 
 
 ```
 .
-|-- middleware
-|-- modules
-|   |-- example
-|   |   |-- controller.py
-|   |   |-- models.py
-|   |   |-- schemas.py
-|   |   |-- services
-|   |   |  |-- example_service.py
-| -- providers
-|   |-- example_provider.py
-| -- services
-| -- assets
-|    |-- css
-|    |-- js
+|-- app
+|    | -- middleware
+|    | -- modules
+|    |    | -- example
+|    |    |   | -- controller.py
+|    |    |   | -- models.py
+|    |    |   | -- schemas.py
+|    |    |   | -- services
+|    |    |   |   | -- example_service.py
+|    | -- providers
+|    |    | -- example_provider.py
+|    | -- services
+|    | -- assets
+|    |    | -- css
+|    |    | -- js
 | -- config.py
 | -- cors.py
 | -- main.py

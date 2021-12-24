@@ -1,6 +1,6 @@
 module.exports = {
   purge: [
-     './assets/**/*.js',
+     './app/assets/**/*.js',
    ],
   darkMode: false, // or 'media' or 'class'
   theme: {
