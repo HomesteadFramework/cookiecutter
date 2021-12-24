@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from app.config import settings
+from app.config import settings, Settings
 from app.cors import get_cors_domains
 
 app = FastAPI()
@@ -13,13 +13,9 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-def main():
-    configure(settings)
-
-
-def configure(settings):
-    configure_cors(settings.app_env)
-    configure_views(settings.dev_mode)
+def configure(settings_obj: Settings):
+    configure_cors(settings_obj.app_env)
+    configure_views(settings_obj)
     configure_middleware()
     configure_routes()
 
@@ -58,9 +54,8 @@ def configure_routes():
         return {"message": "Health Response"}
 
     # Routes from other routers
+    from app.modules.welcome.controller import router as welcome_router
+    app.include_router(welcome_router)
+    
 
-
-if __name__ == "__main__":
-    main()
-else:
-    configure(settings.app_env)
+configure(settings.app_env)

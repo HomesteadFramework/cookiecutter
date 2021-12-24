@@ -1,17 +1,11 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 import fastapi_jinja
 
 router = APIRouter()
 
 
 @router.get('/')
-async def welcome_json():
-    """A route that returns json data"""
-    return {"Hello": "World"}
-
-
-@router.get('/welcome')
 @fastapi_jinja.template('welcome.html')
-async def welcome_html():
+async def welcome_html(request: Request):
     """A route that returns html data"""
     return {"framework": "Wrangler"}
