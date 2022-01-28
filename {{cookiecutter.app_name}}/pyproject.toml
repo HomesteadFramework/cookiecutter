@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "{{cookiecutter.framework_name}}"
+name = "Homestead"
 version = "0.1.0"
 description = ""
 authors = ["Brandon Braner <brandon.braner@gmail.com>"]
