@@ -8,4 +8,4 @@ router = APIRouter()
 @fastapi_jinja.template('welcome.html')
 async def welcome_html(request: Request):
     """A route that returns html data"""
-    return {"framework": "Wrangler"}
+    return {"framework": "Homestead"}
