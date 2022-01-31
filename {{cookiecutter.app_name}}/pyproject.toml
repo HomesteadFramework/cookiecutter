@@ -7,18 +7,16 @@ authors = ["Brandon Braner <brandon.braner@gmail.com>"]
 [tool.poetry.dependencies]
 python = "3.10"
 fastapi = {extras = ["all"], version = "^0.70.1"}
-sqlmodel = "^0.0.5"
+sqlmodel = "^0.0.6"
 Jinja2 = "^3.0.3"
 fastapi-jinja = {git = "https://github.com/AGeekInside/fastapi-jinja.git", branch = "main"}
-homestead = "^0.2.0"
+homestead = "^0.3.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
 tox = "^3.24.4"
 
-[[tool.poetry.source]]
-name = "testpypisimple"
-url = "https://test.pypi.org/simple/"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
